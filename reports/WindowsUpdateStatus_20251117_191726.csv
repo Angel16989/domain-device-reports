@@ -1,0 +1,3 @@
+﻿"ComputerName","Online","LastUpdateDate","LastKB","RecentUpdates_30d","Comment"
+"SRV-DC01","True",,,"0","Error querying updates: A parameter cannot be found that matches parameter name 'CimSession'."
+"DS-01","True",,,"0","Error querying updates: WinRM cannot complete the operation. Verify that the specified computer name is valid, that the computer is accessible over the network, and that a firewall exception for the WinRM service is enabled and allows access from this computer. By default, the WinRM firewall exception for public profiles limits access to remote computers within the same local subnet."
