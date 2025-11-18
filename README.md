@@ -1,4 +1,4 @@
-# ??? Domain Device Reports 
+ï»¿# ??? Domain Device Reports 
  
 ![PowerShell](https://img.shields.io/badge/PowerShell-5.1+-5391FE?style=for-the-badge&logo=powershell&logoColor=white) ![Windows](https://img.shields.io/badge/Windows-Server-0078D6?style=for-the-badge&logo=windows&logoColor=white) ![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge) ![Status](https://img.shields.io/badge/Status-Active-success?style=for-the-badge) 
  
@@ -76,13 +76,13 @@ Perfect for:
  
 ```plaintext 
 domain-device-reports/ 
-ÃÄÄ ?? Get-DomainDevices.ps1          # Main inventory script 
-ÃÄÄ ?? Get-WindowsUpdateStatus.ps1    # Update compliance checker 
-ÃÄÄ ?? reports/                        # Auto-generated CSV reports 
-³   ÃÄÄ DomainDevices_YYYYMMDD_HHMMSS.csv 
-³   ÀÄÄ WindowsUpdateStatus_YYYYMMDD_HHMMSS.csv 
-ÃÄÄ ?? README.md                       # This file 
-ÀÄÄ ?? .gitignore                      # Keeps reports folder clean 
+ÃƒÃ„Ã„ ?? Get-DomainDevices.ps1          # Main inventory script 
+ÃƒÃ„Ã„ ?? Get-WindowsUpdateStatus.ps1    # Update compliance checker 
+ÃƒÃ„Ã„ ?? reports/                        # Auto-generated CSV reports 
+Â³   ÃƒÃ„Ã„ DomainDevices_YYYYMMDD_HHMMSS.csv 
+Â³   Ã€Ã„Ã„ WindowsUpdateStatus_YYYYMMDD_HHMMSS.csv 
+ÃƒÃ„Ã„ ?? README.md                       # This file 
+Ã€Ã„Ã„ ?? .gitignore                      # Keeps reports folder clean 
 ``` 
  
 ---
