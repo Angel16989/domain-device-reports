@@ -1,73 +1,84 @@
-# React + TypeScript + Vite
-
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+# ??? Domain Device Reports 
+ 
+![PowerShell](https://img.shields.io/badge/PowerShell-5.1+-blue.svg) ![License](https://img.shields.io/badge/license-MIT-green.svg) ![Platform](https://img.shields.io/badge/platform-Windows-lightgrey.svg) 
+ 
+> **PowerShell automation scripts for generating Active Directory domain device reports and logging Windows Update status.** 
+ 
+## ?? Overview 
+ 
+This repository contains PowerShell scripts that automate the collection and reporting of: 
+ 
+- Domain-joined computer inventory 
+- Windows Update compliance status 
+- System information and last logon timestamps 
+- Automated CSV report generation with timestamps 
+ 
+Perfect for IT administrators who need regular reports for compliance, auditing, or infrastructure monitoring. 
+ 
+## ? Features 
+ 
+- ? **Automated Domain Device Inventory** - Query all computers in your Active Directory 
+- ? **Windows Update Status Tracking** - Monitor update compliance across devices 
+- ? **CSV Export** - Reports saved as CSV for easy analysis in Excel/Power BI 
+- ? **Timestamped Logging** - Automatic date/time stamping for version control 
+- ? **Lightweight** - Pure PowerShell, no additional dependencies 
+- ? **Schedulable** - Run via Task Scheduler for automated reporting
+ 
+## ?? Reports Generated 
+ 
+### Domain Devices Report 
+ 
+Captures: Name, DNSHostName, OperatingSystem, OS Version, Last Logon Date 
+ 
+**Example:** `DomainDevices_20251117_184215.csv` 
+ 
+### Windows Update Status Report 
+ 
+Tracks Windows Update compliance and status across your infrastructure. 
+ 
+**Example:** `WindowsUpdateStatus_20251117_191726.csv` 
+ 
+## ?? Prerequisites 
+ 
+- PowerShell 5.1 or higher 
+- Active Directory PowerShell Module 
+- Domain admin or equivalent permissions 
+- Network access to domain controllers 
+ 
+## ?? Usage 
+ 
+1. Clone the repo or download scripts 
+2. Run scripts as Administrator 
+3. Reports auto-save to `/reports/` directory 
+ 
+### Schedule with Task Scheduler 
+ 
+```powershell 
+$action = New-ScheduledTaskAction -Execute 'PowerShell.exe' -Argument '-File "C:\path\to\script.ps1"' 
+$trigger = New-ScheduledTaskTrigger -Daily -At 6:00AM 
+Register-ScheduledTask -TaskName "Daily Domain Report" -Action $action -Trigger $trigger 
 ```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+ 
+## ?? Repository Structure 
+ 
+``` 
+domain-device-reports/ 
+ÃÄÄ reports/              # Auto-generated CSV reports 
+³   ÃÄÄ DomainDevices_*.csv 
+³   ÀÄÄ WindowsUpdateStatus_*.csv 
+ÀÄÄ README.md 
+``` 
+ 
+## ?? Author 
+ 
+**Angel16989** 
+ 
+- GitHub: [@Angel16989](https://github.com/Angel16989) 
+ 
+## ?? License 
+ 
+MIT License - Free to use and modify. 
+ 
+---
+ 
+Made for IT Professionals managing Windows Active Directory environments.
